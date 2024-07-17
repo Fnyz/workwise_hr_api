@@ -6,11 +6,23 @@ use App\Http\Controllers\SentEmailController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PasswordController;
 
+use Illuminate\Support\Facades\DB;
+
+
 
 Route::get('/', function () {
     return response()->json([
         "message" => "Welcome to workwiseHR API!"
     ], 200);
+});
+
+Route::get('/test-db', function () {
+    try {
+        DB::connection()->getPdo();
+        echo "Connected successfully to the database!";
+    } catch (\Exception $e) {
+        die("Could not connect to the database. Error: " . $e->getMessage());
+    }
 });
 
 

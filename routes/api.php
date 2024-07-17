@@ -22,6 +22,7 @@ use App\Http\Controllers\CompensationController;
 use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\RatesController;
 use App\Http\Controllers\PayrollApprovedController;
+use App\Models\User;
 
 
 
@@ -73,6 +74,14 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/users/{id}/email', [AuthController::class, 'updateEmail']);
 
 
+});
+
+Route::get('/test', function(Request $request){
+   return response()->json([
+     'message' => 'Test API',
+     'status' => 200,
+     'data' => User::all(),
+   ], 200);
 });
 
 
