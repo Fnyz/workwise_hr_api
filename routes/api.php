@@ -24,6 +24,7 @@ use App\Http\Controllers\RatesController;
 use App\Http\Controllers\PayrollApprovedController;
 
 
+
 Route::middleware('auth:sanctum')->group(function () {
  
     Route::get('/user', function (Request $request) {
@@ -72,6 +73,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/users/{id}/email', [AuthController::class, 'updateEmail']);
 
 
+});
+
+Route::get('/test', function(Request $request){
+   return $request->json([
+    'message' => 'working api'
+   ]);
 });
 
 
