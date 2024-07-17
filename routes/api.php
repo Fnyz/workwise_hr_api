@@ -75,12 +75,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
 });
 
-Route::get('/test', function(Request $request){
-   return response()->json([
-    'message' => 'please work!'
-   ], 200);
-});
-
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
