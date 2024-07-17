@@ -14,12 +14,12 @@
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-    # # Send Requests To Front Controller For Non-API Requests...
-    # RewriteCond %{REQUEST_URI} !^/api
+    # Send Requests To Front Controller For Non-API Requests...
+    RewriteCond %{REQUEST_URI} !^/api
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
-    # # Send Requests To API Front Controller For API Requests...
-    # RewriteRule ^api/(.*)$ /api/index.php [L]
+    # Send Requests To API Front Controller For API Requests...
+    RewriteRule ^api/(.*)$ /api/index.php [L]
 </IfModule>
