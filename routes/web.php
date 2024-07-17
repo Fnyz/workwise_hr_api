@@ -8,7 +8,9 @@ use App\Http\Controllers\PasswordController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return response()->json([
+        "message" => "Welcome to workwiseHR API!"
+    ], 200);
 });
 
 
