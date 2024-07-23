@@ -126,6 +126,7 @@ class EmployeeController extends Controller
     
     
     private function updateEmployee($data, $employee){
+        return $data;
         $base64Image = $data['employee_image'] ?? null;
         $image = $base64Image;
 

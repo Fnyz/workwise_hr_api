@@ -56,7 +56,8 @@ class EmployeeResource extends JsonResource
                 'employee_educational_background' => $this->employee_educational_background === null ? [] : json_decode($this->employee_educational_background),
                 'employee_employment_history' => $this->employee_employment_history === null ? [] : json_decode($this->employee_employment_history),
                 'employee_character_reference' => $this->employee_character_reference === null ? [] : json_decode($this->employee_character_reference),
-                'employee_person_to_notify' => json_decode($this->employee_person_to_notify)
+                'employee_person_to_notify' => json_decode($this->employee_person_to_notify),
+                'employee_leave_credits' => (int) $this->employee_leave_credits,
         ];
     }
 }

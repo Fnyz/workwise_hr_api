@@ -25,7 +25,9 @@ class Leave extends Model
         "leave_status",
         "leave_status_date_time",
         "employee_approval_role",
-        "employee_approval_id"
+        "employee_approval_id",
+        "leave_from_time",
+        "leave_to_time"
     ];
 
     protected $dates = ['leave_status_date_time'];

@@ -22,16 +22,18 @@ class UpdateLeaveRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "department_id" => 'numeric',
-            "employee_id" => 'string',
-            "leave_type_id" => 'unique:leaves,leave_type_id,NULL,id,employee_id,' . request('employee_id') . ',leave_start_date,' . request('leave_start_date'),
-            "leave_start_date" => 'string|after:leave_apply_date|unique:leaves,leave_start_date,NULL,id,employee_id,' . request('employee_id') . ',leave_end_date,' . request('leave_end_date'),
-            "leave_end_date" => 'after:leave_start_date',
-            "leave_status" => 'string',
-            "leave_apply_date" => 'required',
-            "leave_reason" => 'string',
-            "leave_status" => 'string',
-            "leave_status_date_time" => 'date|date_format:Y-m-d H:i:s'
+            "department_id" => 'nullable|numeric',
+            "employee_id" => 'nullable|string',
+            "leave_type_id" => 'nullable',
+            "leave_start_date" => 'required',
+            "leave_end_date" => 'nullable|string',
+            "leave_status" => 'nullable|string',
+            "leave_apply_date" => 'required|string',
+            "leave_reason" => 'nullable|string',
+            "leave_status_date_time" => 'nullable|date_format:Y-m-d H:i:s',
+            "leave_from_time" => 'nullable|string',
+            "leave_to_time" => 'nullable|string',
         ];
+        
     }
 }

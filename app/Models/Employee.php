@@ -50,7 +50,8 @@ class Employee extends Model
         "employee_person_to_notify",
         "employee_age",
         "employee_height",
-        "employee_weight"
+        "employee_weight",
+        "employee_leave_credits"
        
         
     ];

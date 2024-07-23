@@ -46,6 +46,7 @@ class UpdateEmployeeRequest extends FormRequest
                     'employee_age' => 'numeric|nullable',
                     'employee_height' => 'nullable',
                     'employee_weight' => 'nullable',
+                    'employee_leave_credits' => 'numeric'
                 ];
 
             break;

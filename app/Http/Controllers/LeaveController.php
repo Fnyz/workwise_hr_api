@@ -101,6 +101,8 @@ class LeaveController extends Controller
                     'l.updated_at',
                     'l.leave_end_date',
                     'l.leave_reason',
+                    'l.leave_to_time',
+                    'l.leave_from_time',
                     'l.leave_status',
                     'l.created_at',
                     'em.employee_image',
@@ -211,7 +213,8 @@ class LeaveController extends Controller
      */
     public function show(Request $request,string $id)
     {
-      
+        
+        
         
         $leave = Leave::select(
             'leaves.employee_approval_role',
@@ -226,6 +229,8 @@ class LeaveController extends Controller
             'leaves.leave_end_date',
             'leaves.leave_reason',
             'leaves.leave_status',
+            'leaves.leave_from_time',
+            'leaves.leave_to_time',
             'ty.leave_type',
             'leaves.employee_approval_id',
             DB::raw('CONCAT(de.department, " - ", em.employee_name, " (", em.employee_role, ")") as department_head')
