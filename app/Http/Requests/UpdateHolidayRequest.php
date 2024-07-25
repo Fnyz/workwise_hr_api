@@ -24,9 +24,8 @@ class UpdateHolidayRequest extends FormRequest
         return [
             //
             "holiday" => "string",
-            "holiday_start_date" => "string",
-            "holiday_end_date" => "string|after:holiday_start_date",
-            "holiday_year" => "string",
+            "holiday_type" => "string",
+            "holiday_date" => "string",
         ];
     }
 }

@@ -24,9 +24,8 @@ class StoreHolidayRequest extends FormRequest
         return [
             //
             "holiday" => "required|string|max:255",
-            "holiday_start_date" => "required|string",
-            "holiday_end_date" => "required|string|after:holiday_start_date",
-            "holiday_year" => "required|string",
+            "holiday_type" => "required|string",
+            "holiday_date" => "required|string",
         ];
     }
 }
